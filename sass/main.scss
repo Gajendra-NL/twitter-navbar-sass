@@ -1,0 +1,75 @@
+@import "variables";
+@import "base";
+@import "layout";
+@import "navbar";
+
+.actions {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  width: 400px;
+  height: 100%;
+  .action {
+    padding: 0 16px;
+    padding-bottom: 3px;
+
+    font-weight: 700;
+    border-bottom: 0px solid transparent;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    justify-items: center;
+
+    &__icon {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+    &__text {
+      font-size: 13px;
+    }
+    transition: all .15s ease-in-out;
+    &:hover {
+      border-color: $color-primary;
+      border-width: 2px;
+      color: $color-primary;
+      padding-bottom: 1px;
+    }
+  }
+}
+
+.search {
+  margin-right: 10px;
+  display: grid;
+  input, i {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+  }
+  input {
+    height: 30px;
+    box-sizing: border-box;
+    background: $color-search-bg;
+    border-radius: 15px;
+    border: 1px solid $color-search-border;
+    color: white;
+    padding: 8px 52px 8px 12px;
+    &::placeholder {
+      color: $color-text;
+    }
+    transition: all .15s ease-in-out;
+    &:focus {
+      border-width: 2px;
+      border-color: $color-primary;
+    }
+  }
+  i {
+    padding: 4px;
+    padding-right: 6px;
+    line-height: 1.4;
+    justify-self: end;
+
+    padding-right: 10px;
+    font-size: 18px;
+  }
+}

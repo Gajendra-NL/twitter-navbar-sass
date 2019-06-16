@@ -1,0 +1,63 @@
+@mixin remove-default-button-styles() {
+  border: none;
+}
+
+@mixin blue-button() {
+  font-weight: bold;
+  background: $color-primary-darker;
+  @include remove-default-button-styles;
+
+  box-sizing: border-box;
+  height: 32px;
+  width: 74px;
+  border-radius: 100px;
+  padding: 5px 16px;
+  border: 1px solid transparent;
+
+  font-size: 14px;
+}
+
+.navbar {
+  background: $color-secondary;
+  color: $color-text;
+
+  &__logo {
+    color: $color-primary
+  }
+  &__tweet {
+    background: $color-primary;
+    color: white;
+    @include blue-button;
+  }
+}
+
+.navbar {
+  font-size: 16px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr [actions-s] 1fr [actions-e ] 190px [logo-s] 50px [logo-e] 190px [search-s] auto [search-e profile-s] 32px [profile-e tweet-s] 100px [tweet-e] 1fr;
+  justify-items: center;
+  align-items: center;
+
+  &__actions {
+    grid-column: actions-s/actions-e;
+  }
+  &__logo {
+    grid-column: logo-s/logo-e;
+    color: blue;
+    font-size: 20px;
+  }
+  &__search {
+    grid-column: search-s/search-e;
+  }
+  &__profile {
+    grid-column: profile-s/profile-e;
+    object-fit: cover;
+    border-radius: 16px;
+    height: 32px;
+    width: 32px;
+  }
+  &__tweet {
+    grid-column: tweet-s/tweet-e;
+  }
+}
